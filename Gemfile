@@ -65,16 +65,9 @@ group :production do
   gem 'mysql2'
 end
 gem 'devise'
-gem 'refile'
-gem 'refile-mini_magick'
-gem 'kaminari','~> 1.2.1'
-gem 'pry-rails'
-gem 'rubocop'
-gem 'active_admin'
-gem 'cancan'
-gem 'query-rails'
-gem "simple_calendar", "~> 2.0"
-gem 'geocoder'
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+gem 'kaminari','~> 1.2.1'
