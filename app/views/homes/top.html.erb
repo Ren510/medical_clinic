@@ -3,29 +3,45 @@
             <div class="row">
                 <div class="col-auto mx-auto">
                     <p></p>
-                    <h3>Webで診察を容易に予約できる</h3>
-                    <h3>クリニックサイトです。</h3>
+                    <h4>Webで診察を容易に予約できる</h4>
+                    <h4>クリニックサイトです。</h4>
                     <p></p>
-                    <h3>初診の方は、インターネットまたはお電話にて</h3>
-                    <h3>予約していただきます。</h3>
+                    <h4>初診の方は、インターネットまたはお電話にて</h4>
+                    <h4>予約していただきます。</h4>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-1"></div>
-                        <h2>新着商品</h2>
-                    </div>
-                </div>
-                <br></br>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-2"></div>
             </div>
         </div>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-8"></div>
-                      <div class="col-md-2">
-                        <%= link_to"全ての商品を見る>",root_path %></p>
-                      </div>
-                  </div>
-                </div>
+        <div class="container text-center">
+            <table class="table table-hover table-inverse">
+                <thead>
+                    <tr>
+                        <td><h2><初診の方はこちら></h2>
+                        <p></p>
+                        <%= link_to "インターネット予約画面(初診)", new_patient_registration_path, class: 'btn btn-outline-primary btn-lg' %>
+                        <td>
+                        <td></td>
+                        <td></td>
+                        <td><h2><再診の方はこちら></h2>
+                        <p></p>
+                        <%= link_to "インターネット予約画面(再診)", new_patient_session_path, class: 'btn btn-outline-success btn-lg' %>
+                        </td>
+                    </tr>
+                <thead>
+            </table>
+        </div>
+        <div class="container text-center">
+            <h2><電話予約の方はこちら></h2>
+            <h5><strong>TEL:</strong>03-xxx-xxxx</h5>
+        </div>
+        <br></br>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8"></div>
+              <div class="col-md-2">
+                <%= link_to"全ての商品を見る>",root_path %></p>
+              </div>
+          </div>
+        </div>

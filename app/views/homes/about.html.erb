@@ -1,2 +1,110 @@
-<h1>Homes#about</h1>
-<p>Find me in app/views/homes/about.html.erb</p>
+  <%= flash[:notice] %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+                <p></p>
+                <h1><strong><当院について></strong></h1>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+      <p></p>
+      <h1>〜診察スケジュール〜</h1>
+    <table  align="center" width="500" height="100" border="1">
+      <!--スケジュールの曜日-->
+    	<tr>
+    		<th></th>
+    		<td align="center" valign="top"><strong>日</strong></td>
+    		<td align="center" valign="top"><strong>月</strong></td>
+    		<td align="center" valign="top"><strong>火</strong></td>
+    		<td align="center" valign="top"><strong>水</strong></td>
+    		<td align="center" valign="top"><strong>木</strong></td>
+    		<td align="center" valign="top"><strong>金</strong></td>
+    		<td align="center" valign="top"><strong>土</strong></td>
+    	</tr>
+    	<tr>
+    	  <!--午前のスケジュール-->
+    		<th width="150" rowspan="1">9:00 ~ 12:00</th>
+    		<td align="center" valign="top">○</td>
+    		<td align="center" valign="top">○</td>
+    		<td align="center" valign="top">○</td>
+    		<td align="center" valign="top">○</td>
+    		<td align="center" valign="top">○</td>
+    		<td align="center" valign="top">-</td>
+    		<td align="center" valign="top">○</td>
+    	</tr>
+    	<tr>
+    		<!-- 午後のスケジュール -->
+    		<td><strong>13:00 ~ 17:00</strong></td>
+    		<td align="center" valign="top">-</td>
+    		<td align="center" valign="top">○</td>
+    		<td align="center" valign="top">○</td>
+    		<td align="center" valign="top">○</td>
+    		<td align="center" valign="top">○</td>
+    		<td align="center" valign="top">-</td>
+    		<td align="center" valign="top">-</td>
+    	</tr>
+    </table>
+    <div class="container text-center">
+        <p></p>
+        <h2>medical_clinic</h2>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+          <h4>〒xxx-xxxx</h4>
+      </div>
+    </div>
+    <p></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+          <h4>東京都xx区xx丁目xxxxxxxxxxxxxxx</h4>
+          
+      </div>
+    </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-auto mx-auto">
+        
+      <!--地図の表示-->
+      <!-- 検索フォームから住所を特定しピンを刺す -->
+      <!--ビューに関する部分-->
+        <div id='map'></div>
+  
+        <!--マップの大きさ-->
+        <style>
+        #map {
+          height: 600px;
+          width: 600px;
+        }
+        </style>
+  
+        <script>
+        let map
+  
+  
+        function initMap(){
+          geocoder = new google.maps.Geocoder()
+  
+          map = new google.maps.Map(document.getElementById('map'), {
+  
+            // latが緯度、lngが経度を示します
+            // スカイツリーを表示
+            center: {lat: 35.710063, lng:139.8107},
+            zoom: 16,
+          });
+  
+          //positionに指定した座標にピンを表示させます
+          // スカイツリーを表示
+          marker = new google.maps.Marker({
+            position:  {lat: 35.710063, lng:139.8107},
+            map: map
+          });
+        }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWiUz5zOE2I2A1XfwdgQfs9TfHF-it_SI&callback=initMap" async defer></script>
+      </div>
+    </div>
+  </div>
