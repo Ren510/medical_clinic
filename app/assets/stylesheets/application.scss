@@ -11,9 +11,63 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+
  *= require_self
  */
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
- 
+
+ /* 高さを指定することにより画像が表示される */
+#box{
+  height: 600px;
+}
+.image1 {
+  background-image: url(ninti.png);
+}
+.image2 {
+  background-image: url(suimin.png);
+}
+.image3 {
+  background-image: url(tekiou.png);
+}
+.image4 {
+  background-image: url(utu.png);
+}
+
+// スライドショーのバックグラウンドカラーを変更するとき
+.skippr>div {
+ background-color: gainsboro;
+}
+
+// 画像の大きさを指定
+.container-skippr {
+    height: 500px;
+    width: 100%;
+}
+
+// skipprのボタン関連を変更するとき
+.skippr-next {
+ border-right: 3px solid black;
+ border-bottom: 3px solid black;
+}
+.skippr-previous {
+ border-top: 3px solid black;
+ border-left: 3px solid black;
+}
+
+// topページへ戻る記述
+.top-btn {
+  position:   fixed;
+  right:      30px;
+  bottom:     40px;
+}
+
+.top-btn a {
+  width:      50px;
+  height:     50px;
+}
+
+.top-btn {
+    width: 100px;
+}

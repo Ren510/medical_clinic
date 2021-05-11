@@ -1,0 +1,131 @@
+<%= flash[:notice] %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+                <p></p>
+                <h1><strong><対象疾患一覧></strong></h1>
+                <div class="container-skippr">
+                  <div class="theTarget">
+                    <div style="background-image: url(<%= asset_path('suimin.png') %>)"></div>
+                    <div style="background-image: url(<%= asset_path('tekiou.png') %>)"></div>
+                    <div style="background-image: url(<%= asset_path('utu.png') %>)"></div>
+                    <div style="background-image: url(<%= asset_path('ninti.png') %>)"></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+    <!--
+    .section{
+      height:320px;
+      border:1px solid #ff6a00;
+    }
+    -->
+    </style>
+    <script type="text/javascript">
+        function ScrollWindow(elem) {
+            var element = document.getElementById(elem);
+            var rect = element.getBoundingClientRect();
+            var elemtop = rect.top + window.pageYOffset;
+            document.documentElement.scrollTop = elemtop;
+        }
+
+    </script>
+</head>
+<body>
+    <div id="section1" class="section">
+        Section1<br />
+        <a id="link_section2" href="javascript:void(0);" onclick="ScrollWindow('section2');">Section2</a><br />
+        <a id="link_section3" href="javascript:void(0);" onclick="ScrollWindow('section3');">Section3</a><br />
+        <a id="link_section4" href="javascript:void(0);" onclick="ScrollWindow('section4');">Section4</a><br />
+        <a id="link_section5" href="javascript:void(0);" onclick="ScrollWindow('section5');">Section5</a><br />
+        <a id="link_section6" href="javascript:void(0);" onclick="ScrollWindow('section6');">Section6</a><br />
+        <a id="link_section7" href="javascript:void(0);" onclick="ScrollWindow('section7');">Section7</a><br />
+        <a id="link_section8" href="javascript:void(0);" onclick="ScrollWindow('section8');">Section8</a><br />
+    </div>
+    <div id="section2" class="section">Section2</div>
+    <div id="section3" class="section">Section3</div>
+    <div id="section4" class="section">Section4</div>
+    <div id="section5" class="section">Section5</div>
+    <div id="section6" class="section">Section6</div>
+    <div id="section7" class="section">Section7</div>
+    <div id="section8" class="section">Section8</div>
+</body>
+</html><html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+    <!--
+    .section{
+      height:320px;
+      border:1px solid #ff6a00;
+    }
+    -->
+    </style>
+    <script type="text/javascript">
+        function ScrollWindow(elem) {
+            var element = document.getElementById(elem);
+            var rect = element.getBoundingClientRect();
+            var elemtop = rect.top + window.pageYOffset;
+            document.documentElement.scrollTop = elemtop;
+        }
+
+    </script>
+</head>
+<body>
+    <div id="section1" class="section">
+        Section1<br />
+        <a id="link_section2" href="javascript:void(0);" onclick="ScrollWindow('section2');">Section2</a><br />
+        <a id="link_section3" href="javascript:void(0);" onclick="ScrollWindow('section3');">Section3</a><br />
+        <a id="link_section4" href="javascript:void(0);" onclick="ScrollWindow('section4');">Section4</a><br />
+        <a id="link_section5" href="javascript:void(0);" onclick="ScrollWindow('section5');">Section5</a><br />
+        <a id="link_section6" href="javascript:void(0);" onclick="ScrollWindow('section6');">Section6</a><br />
+        <a id="link_section7" href="javascript:void(0);" onclick="ScrollWindow('section7');">Section7</a><br />
+        <a id="link_section8" href="javascript:void(0);" onclick="ScrollWindow('section8');">Section8</a><br />
+    </div>
+    <div id="section2" class="section">Section2</div>
+    <div id="section3" class="section">Section3</div>
+    <div id="section4" class="section">Section4</div>
+    <div id="section5" class="section">Section5</div>
+    <div id="section6" class="section">Section6</div>
+    <div id="section7" class="section">Section7</div>
+    <div id="section8" class="section">Section8</div>
+</body>
+</html>
+
+<!DOCTYPE html>
+  <html lang="ja">
+  <head>
+    <meta charset="UTF-8 /">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>9章【「トップへ戻る」ボタンを作ってみよう】</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>9章【「トップへ戻る」ボタンを作ってみよう】</h1>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <span id="back">
+      <a href="#">
+        <img src="img/arrow.png" alt="">
+      </a>
+    </span>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
