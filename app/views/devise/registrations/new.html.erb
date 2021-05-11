@@ -15,13 +15,27 @@
                   <%= f.label :first_name_kana, "(セイ)" %> <%= f.text_field :first_name_kana, :placeholder =>"ヤマダ" %>
                   <%= f.label :last_name_kana, "(メイ)" %> <%= f.text_field :last_name_kana, :placeholder =>"タロウ" %>
                 </div>
+
+                <div class="gender-field">
+                  <%= f.label :gender,'性別' %><br />
+                  <%= f.label :man  %>
+                  <%= f.radio_button :gender, :man %>
+                  <%= f.label :woman  %>
+                  <%= f.radio_button :gender, :woman %>
+                </div>
+
+                <!---#  生年月日の入力エリア-->
+                <div class="field">
+                  <%= f.label :birthday,'生年月日' %><br>
+                  <%= f.date_select :birthday, patient_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1) %>
+                </div>
                 <div class="field">
                   <%= f.label :email %><br />
                   <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                 </div>
 
                 <div class="field">
-                  <%= f.label :postcode,'郵便番号' %><br />
+                  <%= f.label :postcode,'郵便番号(ハイフンなし)' %><br />
                   <%= f.text_field :postcode, autocomplete: 'postcode', class: 'form-control' %>
                 </div>
 
@@ -47,6 +61,16 @@
                 </div>
 
                 <div class="field">
+                  <%= f.label :telephone_number,'電話番号(ハイフンなし)' %><br />
+                  <%= f.text_field :telephone_number, autocomplete: 'telephone_number', class: 'form-control' %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :disease,'お困りの症状' %><br />
+                  <%= f.text_field :disease, autocomplete: 'disease', class: 'form-control' %>
+                </div>
+
+                <div class="field">
                   <%= f.label :password,'パスワード' %>
                   <% if @minimum_password_length %>
                   <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -69,3 +93,4 @@
       </div>
     </div>
   </div>
+

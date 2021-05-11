@@ -60,19 +60,19 @@
       <div class="row">
         <div class="col-md-2"></div>
           <h4>東京都xx区xx丁目xxxxxxxxxxxxxxx</h4>
-          
+
       </div>
     </div>
-  
+
   <div class="container">
     <div class="row">
       <div class="col-auto mx-auto">
-        
+
       <!--地図の表示-->
       <!-- 検索フォームから住所を特定しピンを刺す -->
       <!--ビューに関する部分-->
         <div id='map'></div>
-  
+
         <!--マップの大きさ-->
         <style>
         #map {
@@ -80,22 +80,22 @@
           width: 600px;
         }
         </style>
-  
+
         <script>
         let map
-  
-  
+
+
         function initMap(){
           geocoder = new google.maps.Geocoder()
-  
+
           map = new google.maps.Map(document.getElementById('map'), {
-  
+
             // latが緯度、lngが経度を示します
             // スカイツリーを表示
             center: {lat: 35.710063, lng:139.8107},
-            zoom: 16,
+            zoom: 15,
           });
-  
+
           //positionに指定した座標にピンを表示させます
           // スカイツリーを表示
           marker = new google.maps.Marker({
@@ -104,6 +104,8 @@
           });
         }
         </script>
+        <!--APIkey-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['AIzaSyDWiUz5zOE2I2A1XfwdgQfs9TfHF-it_SI']%>&callback=initMap" async defer></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWiUz5zOE2I2A1XfwdgQfs9TfHF-it_SI&callback=initMap" async defer></script>
       </div>
     </div>
