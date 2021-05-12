@@ -20,13 +20,9 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ml-auto">
               <% if patient_signed_in? %>
-              <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                   <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div class="navbar-nav">
                         <%= link_to"当院について",about_path,class: "nav-item nav-link" %>
                         <%= link_to"マイページ",mypage_path,class: "nav-item nav-link" %>
@@ -40,10 +36,6 @@
                 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                   <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div class="navbar-nav">
                         <%= link_to"TOP",root_path,class: "nav-item nav-link" %>
                         <%= link_to"当院について",about_path,class: "nav-item nav-link" %>
@@ -51,7 +43,6 @@
                         <%= link_to"医師一覧",admin_index_path,class: "nav-item nav-link" %>
                         <%= link_to"初診",new_patient_registration_path,class: "nav-item nav-link" %>
                         <%= link_to"再診",new_patient_session_path,class: "nav-item nav-link" %>
-
                       </div>
                     </div>
                   </nav>
