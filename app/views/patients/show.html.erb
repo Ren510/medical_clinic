@@ -1,2 +1,35 @@
-<h1>Patients#show</h1>
-<p>Find me in app/views/patients/show.html.erb</p>
+	<div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+                <p></p>
+                <h1><strong><マイページ></strong></h1>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <div class="container text-center">
+        <div class="row">
+					<section class="inner">
+					  <% if flash[:notice] %>
+					    <p class="text-active"><%= flash[:notice] %></p>
+					  <% end %>
+						<h3>登録情報<%= link_to "編集する", edit_patient_path(@patient.id), class: "btn btn-success" %></h3>
+
+					</div>
+					<table class="table table-hover table-inverse">
+					   <tr><th>氏名</th><td><%= @patient.first_name %> <%= @patient.last_name %></td></tr>
+					　 <tr><th>カナ</th><td><%= @patient.first_name_kana %> <%= @patient.last_name_kana %></td></tr>
+					　 <tr><th>性別</th><td><%= @patient.gender %></td></tr>
+					　 <tr><th>生年月日</th><td><%= @patient.birthday %></td></tr>
+					　 <tr><th>メールアドレス</th><td><%= @patient.email %></td></tr>
+					　 <tr><th>郵便番号</th><td><%= @patient.postal_code %></td></tr>
+					　 <tr><th>都道府県</th><td><%= @patient.prefecture_code %></td></tr>
+					　 <tr><th>市区町村</th><td><%= @patient.address_city %></td></tr>
+					　 <tr><th>番地</th><td><%= @patient.address_street %></td></tr>
+					　 <tr><th>建物</th><td><%= @patient.address_building %></td></tr>
+					　 <tr><th>電話番号(ハイフンなし)</th><td><%= @patient.telephone_number %></td></tr>
+					　 <tr><th>お困りの症状</th><td><%= @patient.disease %></td></tr>
+
+					</table><br>
+				</div>
+			</div>

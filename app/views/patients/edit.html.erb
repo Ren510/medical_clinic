@@ -1,2 +1,30 @@
-<h1>Patients#edit</h1>
-<p>Find me in app/views/patients/edit.html.erb</p>
+<div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+                <p></p>
+                <h1><strong><患者編集画面></strong></h1>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <div class="container text-center">
+        <div class="row">
+					  <% if flash[:notice] %>
+					    <p class="text-active"><%= flash[:notice] %></p>
+					  <% end %>
+
+            <%= form_with model:@patient, url:patient_path, local:true do |f| %>
+              <tr><th>氏名</th><td><%= f.text_field :first_name %> <%= f.text_field :last_name %></td></tr>
+            　<tr><th>カナ</th><td><%= f.text_field :first_name_kana %> <%= f. text_field :last_name_kana %></td></tr><br>
+            　<tr><th>性別</th><td><%= f.text_field :gender %></td></tr>
+            　<tr><th>生年月日</th><td><%= f.text_field :birthday %></td></tr>
+              <tr><th>メールアドレス</th><td><%= f. text_field :email %></td></tr>
+              <tr><th>郵便番号</th><td><%= f.text_field :postal_code %></td></tr>
+              <tr><th>都道府県</th><td><%= f.text_field :prefecture_code %></td></tr>
+              <tr><th>市区町村</th><td><%= f.text_field :address_city %></td></tr>
+              <tr><th>番地</th><td><%= f.text_field :address_street %></td></tr>
+              <tr><th>建物</th><td><%= f.text_field :address_building %></td></tr>
+              <tr><th>電話番号(ハイフンなし)</th><td><%= f.text_field :telephone_number %></td></tr>
+              <tr><th>お困りの症状</th><td><%= f.text_field :disease %></td></tr>
+              <%= f.submit '編集内容を保存', class:"btn btn-success" %>
+            <% end %>

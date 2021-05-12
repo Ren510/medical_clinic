@@ -13,7 +13,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
       :birthday,
       :email,
       :postal_code,
-      :prefecture_name,
+      :prefecture_code,
       :address_city,
       :address_street,
       :address_building,
