@@ -4,128 +4,136 @@
             <div class="col-md-1"></div>
                 <p></p>
                 <h1><strong><対象疾患一覧></strong></h1>
+                <!--<スライドショーの画像をここで用意-->
                 <div class="container-skippr">
                   <div class="theTarget">
+                    <div style="background-image: url(<%= asset_path('utu.png') %>)"></div>
                     <div style="background-image: url(<%= asset_path('suimin.png') %>)"></div>
                     <div style="background-image: url(<%= asset_path('tekiou.png') %>)"></div>
-                    <div style="background-image: url(<%= asset_path('utu.png') %>)"></div>
                     <div style="background-image: url(<%= asset_path('ninti.png') %>)"></div>
                   </div>
                 </div>
             </div>
         </div>
     </div>
-    <html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-    <style>
-    <!--
-    .section{
-      height:320px;
-      border:1px solid #ff6a00;
-    }
-    -->
-    </style>
-    <script type="text/javascript">
-        function ScrollWindow(elem) {
-            var element = document.getElementById(elem);
-            var rect = element.getBoundingClientRect();
-            var elemtop = rect.top + window.pageYOffset;
-            document.documentElement.scrollTop = elemtop;
-        }
 
-    </script>
-</head>
-<body>
-    <div id="section1" class="section">
-        Section1<br />
-        <a id="link_section2" href="javascript:void(0);" onclick="ScrollWindow('section2');">Section2</a><br />
-        <a id="link_section3" href="javascript:void(0);" onclick="ScrollWindow('section3');">Section3</a><br />
-        <a id="link_section4" href="javascript:void(0);" onclick="ScrollWindow('section4');">Section4</a><br />
-        <a id="link_section5" href="javascript:void(0);" onclick="ScrollWindow('section5');">Section5</a><br />
-        <a id="link_section6" href="javascript:void(0);" onclick="ScrollWindow('section6');">Section6</a><br />
-        <a id="link_section7" href="javascript:void(0);" onclick="ScrollWindow('section7');">Section7</a><br />
-        <a id="link_section8" href="javascript:void(0);" onclick="ScrollWindow('section8');">Section8</a><br />
-    </div>
-    <div id="section2" class="section">Section2</div>
-    <div id="section3" class="section">Section3</div>
-    <div id="section4" class="section">Section4</div>
-    <div id="section5" class="section">Section5</div>
-    <div id="section6" class="section">Section6</div>
-    <div id="section7" class="section">Section7</div>
-    <div id="section8" class="section">Section8</div>
-</body>
-</html><html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-    <style>
-    <!--
-    .section{
-      height:320px;
-      border:1px solid #ff6a00;
-    }
-    -->
-    </style>
-    <script type="text/javascript">
-        function ScrollWindow(elem) {
-            var element = document.getElementById(elem);
-            var rect = element.getBoundingClientRect();
-            var elemtop = rect.top + window.pageYOffset;
-            document.documentElement.scrollTop = elemtop;
-        }
+    <!--疾患患者の内容についての記述-->
+    <div class="container text-center">
+        <a href="#utu"><button type="button" class="btn btn-danger btn-lg">うつ病</button></a>
+        <a href="#suimin"><button type="button" class="btn btn-danger btn-lg">睡眠障害</button></a>
+        <a href="#tekiou"><button type="button" class="btn btn-danger btn-lg">適応障害</button></a>
+        <a href="#ninti"><button type="button" class="btn btn-danger btn-lg">認知症</button></a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                            <p></p>
+                            <h1><strong>〜症状について〜</strong></h1>
 
-    </script>
-</head>
-<body>
-    <div id="section1" class="section">
-        Section1<br />
-        <a id="link_section2" href="javascript:void(0);" onclick="ScrollWindow('section2');">Section2</a><br />
-        <a id="link_section3" href="javascript:void(0);" onclick="ScrollWindow('section3');">Section3</a><br />
-        <a id="link_section4" href="javascript:void(0);" onclick="ScrollWindow('section4');">Section4</a><br />
-        <a id="link_section5" href="javascript:void(0);" onclick="ScrollWindow('section5');">Section5</a><br />
-        <a id="link_section6" href="javascript:void(0);" onclick="ScrollWindow('section6');">Section6</a><br />
-        <a id="link_section7" href="javascript:void(0);" onclick="ScrollWindow('section7');">Section7</a><br />
-        <a id="link_section8" href="javascript:void(0);" onclick="ScrollWindow('section8');">Section8</a><br />
-    </div>
-    <div id="section2" class="section">Section2</div>
-    <div id="section3" class="section">Section3</div>
-    <div id="section4" class="section">Section4</div>
-    <div id="section5" class="section">Section5</div>
-    <div id="section6" class="section">Section6</div>
-    <div id="section7" class="section">Section7</div>
-    <div id="section8" class="section">Section8</div>
-</body>
-</html>
+        <!--<スライドショーの画像をここで用意-->
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="col-mdx-1"></div>
+                        <table class="table table-hover table-inverse">
+                            <thead>
+                            <p></p>
+                            <h2 id="utu"></h2>
+                            <h2><strong>1.うつ病</strong></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                        <p>うつ病の主な症状には、</p>
+                	<div class="bg-highlight">
+                		<ul class="list-basic">
+                			<li>憂鬱で気持ちが落ち込みすぎてしまう</li>
+                			<li>何事にも興味が持てなくなる</li>
+                		</ul>
+            　       </div>
+                	<p>などの心の症状と、</p>
+                	<div class="bg-highlight">
+                		<ul class="list-basic">
+                			<li>憂鬱で気持ちが落ち込みすぎてしまう</li>
+                			<li>何事にも興味が持てなくなる</li>
+                		</ul>
+                	</div>
+                	<p>などの身体の症状があります。そのため、何かをしたいと思えなくなったり、本来やらなくてはならないことが出来なくなってしまい、「こんなことも出来ない自分は駄目だ」と感じてさらに落ち込んでしまうという負のスパイラルに陥ってしまいます。<br>
+                		更に重症化すると、自分には存在する意味がないと感じたり、死んでしまいたいと感じてしまう場合もあります。そのまま治療をしないでおくと、自傷行為（自分自身を傷つける行為）をしてしまう可能性もあるので、精神科医による早期発見、早期治療が重要になります。</p>
+                </div>
+                <%= image_tag 'utu.png' ,width: '50%', height: '50%'%>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!DOCTYPE html>
-  <html lang="ja">
-  <head>
-    <meta charset="UTF-8 /">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>9章【「トップへ戻る」ボタンを作ってみよう】</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <h1>9章【「トップへ戻る」ボタンを作ってみよう】</h1>
+            <h2 id="suimin"></h2>
+            <div class="container">
+                    <div class="col-mdx-1"></div>
+                        <table class="table table-hover table-inverse">
+                            <thead>
+                            <p></p>
+                            <h2><strong>2.睡眠障害(不眠症)</strong></h2>
+                        </div>
+                    </div>
+                </div>
+            <div class="container">
+                    <div class="col-md-7">
+        					<p>不眠に悩む方は多く、日本人の4人に1人が睡眠に不満を持っていると言われています。不眠症（原発性不眠症）では、不眠の原因となるものが不明であるにも関わらず不眠が続き、日中（起きているとき）に疲労感や注意、集中の難しさを感じてしまいます。眠るときには、なんとかして眠ろうと努力しますが、その努力がかえって眠気を妨げてしまい眠れなくなってしまいます。一方でテレビや本を読んでいるときなどの眠ろうとしていないときには、眠気を感じやすいです。</p>
+        					<p>また、以下のような睡眠障害もありますので、医師にご相談ください。</p>
+        					<div class="bg-highlight">
+        						<ul class="list-basic">
+        							<li>ナルコレプシー</li>
+        							<li>睡眠時無呼吸症候群</li>
+        							<li>概日リズム睡眠障害</li>
+        							<li>下肢静止不能症候群（レストレスレッグス症候群；むずむず足症候群）</li>
+        						</ul>
+        					</div>
+        				</div>
+                        <%= image_tag 'suimin.png' ,width: '50%', height: '50%'%>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+            <h2 id="tekiou"></h2>
+                <div class="container">
+                    <div class="col-mdx-1"></div>
+                        <table class="table table-hover table-inverse">
+                            <thead>
+                            <p></p>
+                            <h2><strong>3.適応障害</strong></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                   <p>適応障害とは、ストレスとなる出来事によって気持ちや行動面が影響され、社会生活を送る上で支障が生じてしまう状態を指します。ストレスとなる出来事は、自然災害から個人的な出来事まで様々にあり、一つの出来事である場合もありますし、複数の出来事である場合もあります。こうした出来事によって、憂うつな気分になってしまう、不安にかられてしまう、怒りを感じやすい、不眠・過眠、食欲がないなどの症状が生じることもあります。ただし、うつ病や双極性障害、統合失調症などの診断が当てはまる場合には、それらの病気が優先的に診断されます。</p>
+                <%= image_tag 'tekiou.png' ,width: '50%', height: '50%'%>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-    <span id="back">
-      <a href="#">
-        <img src="img/arrow.png" alt="">
-      </a>
-    </span>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
-</html>
+            <h2 id="ninti"></h2>
+                <div class="container">
+                    <div class="col-mdx-1"></div>
+                        <table class="table table-hover table-inverse">
+                            <thead>
+                            <p></p>
+                            <h2><strong>4.認知症</strong></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                   <p>認知症には大きく分けて、アルツハイマー型認知症、前頭側頭型認知症、レビー小体型認知症、脳血管性認知症に分けられ、それぞれ症状が異なります。</p>
+                <%= image_tag 'ninti.png' ,width: '50%', height: '50%'%>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>

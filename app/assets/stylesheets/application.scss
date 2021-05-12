@@ -42,7 +42,7 @@
 
 // 画像の大きさを指定
 .container-skippr {
-    height: 500px;
+    height: 900px;
     width: 100%;
 }
 
@@ -70,4 +70,82 @@
 
 .top-btn {
     width: 100px;
+}
+
+.btn1 {
+    display:  inline-block;
+    color: #fff;
+    text-decoration:  none;
+    background-color: #2196F3;
+    border-radius: 5px;
+    position:  relative;
+    height: 50px;
+    width: 50px;
+    cursor:pointer;
+}
+
+// 対象疾患についての記述
+// うつ病まで移動
+.btn1::before {
+    content:  '';
+    width: 20px;
+    height: 20px;
+    display:  block;
+    border-top: solid 2px;
+    border-right: solid 2px;
+    transform: rotate(135deg);
+    position:  absolute;
+    top: 0px;
+    bottom:  10px;
+    left:  0;
+    right:  0;
+    margin:  auto;
+}
+
+.btn2::before {
+    content:  '';
+    width: 20px;
+    height: 20px;
+    display:  block;
+    border-top: solid 2px;
+    border-right: solid 2px;
+    transform: rotate(135deg);
+    position:  absolute;
+    top: 0px;
+    bottom:  10px;
+    left:  0;
+    right:  0;
+    margin:  auto;
+}
+
+.btn3::before {
+    content:  '';
+    width: 20px;
+    height: 20px;
+    display:  block;
+    border-top: solid 2px;
+    border-right: solid 2px;
+    transform: rotate(135deg);
+    position:  absolute;
+    top: 0px;
+    bottom:  10px;
+    left:  0;
+    right:  0;
+    margin:  auto;
+}
+
+.btn4::before {
+    content:  '';
+    width: 20px;
+    height: 20px;
+    display:  block;
+    border-top: solid 2px;
+    border-right: solid 2px;
+    transform: rotate(135deg);
+    position:  absolute;
+    top: 0px;
+    bottom:  10px;
+    left:  0;
+    right:  0;
+    margin:  auto;
 }
