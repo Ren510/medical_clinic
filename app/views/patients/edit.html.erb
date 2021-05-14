@@ -1,30 +1,106 @@
-<div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-                <p></p>
-                <h1><strong><患者編集画面></strong></h1>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                    <h1><strong><患者編集画面></strong></h1>
+                    <p class="text-right">
+                        <%= link_to "マイページへ戻る", mypage_path, class: "btn btn-primary" %>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <p></p>
-    <div class="container text-center">
-        <div class="row">
-					  <% if flash[:notice] %>
-					    <p class="text-active"><%= flash[:notice] %></p>
-					  <% end %>
+        <p></p>
+        <div class="container">
+                <% if flash[:notice] %>
+                <p class="text-active"><%= flash[:notice] %></p>
+                <% end %>
+                <%= form_with model:@patient, url:patient_path, local:true do |f| %>
+                    <div class="field">
+                      <%= f.label :first_name, "(姓)", class: "patient_name" %> <%= f.text_field :first_name, autofocus: true, :placeholder =>"山田" %>
+                      <%= f.label :last_name, "(名)", class: "patient_name" %> <%= f.text_field :last_name, :placeholder =>"太郎" %>
+                    </div>
+                    <div class="field">
+                      <%= f.label :first_name_kana, "(セイ)" %> <%= f.text_field :first_name_kana, :placeholder =>"ヤマダ" %>
+                      <%= f.label :last_name_kana, "(メイ)" %> <%= f.text_field :last_name_kana, :placeholder =>"タロウ" %>
+                    </div>
 
-            <%= form_with model:@patient, url:patient_path, local:true do |f| %>
-              <tr><th>氏名</th><td><%= f.text_field :first_name %> <%= f.text_field :last_name %></td></tr>
-            　<tr><th>カナ</th><td><%= f.text_field :first_name_kana %> <%= f. text_field :last_name_kana %></td></tr><br>
-            　<tr><th>性別</th><td><%= f.text_field :gender %></td></tr>
-            　<tr><th>生年月日</th><td><%= f.text_field :birthday %></td></tr>
-              <tr><th>メールアドレス</th><td><%= f. text_field :email %></td></tr>
-              <tr><th>郵便番号</th><td><%= f.text_field :postal_code %></td></tr>
-              <tr><th>都道府県</th><td><%= f.text_field :prefecture_code %></td></tr>
-              <tr><th>市区町村</th><td><%= f.text_field :address_city %></td></tr>
-              <tr><th>番地</th><td><%= f.text_field :address_street %></td></tr>
-              <tr><th>建物</th><td><%= f.text_field :address_building %></td></tr>
-              <tr><th>電話番号(ハイフンなし)</th><td><%= f.text_field :telephone_number %></td></tr>
-              <tr><th>お困りの症状</th><td><%= f.text_field :disease %></td></tr>
-              <%= f.submit '編集内容を保存', class:"btn btn-success" %>
-            <% end %>
+                    <!--性別の入力エリア-->
+                    <div class="gender-field">
+                      <%= f.label :gender,'性別' %><br />
+                      <%= f.label :man  %>
+                      <%= f.radio_button :gender, :man %>
+                      <%= f.label :woman  %>
+                      <%= f.radio_button :gender, :woman %>
+                    </div>
+
+                    <!---#  生年月日の入力エリア-->
+                    <div class="field">
+                      <%= f.label :birthday,'生年月日' %><br>
+                      <%= f.date_select :birthday, patient_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1) %>
+                    </div>
+                    <div class="field">
+                      <%= f.label :email %><br />
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :postal_code,'郵便番号(ハイフンなし)' %><br />
+                      <%= f.text_field :postal_code, autocomplete: 'postcode', class: 'form-control' %>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :prefecture_name,'都道府県' %><br />
+
+                    <!--47都道府県をプルダウンメニューで表示-->
+                      <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, { prompt: '選択してください' }, class: 'form-control' %>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :address_city,'市区町村' %><br />
+                      <%= f.text_field :address_city, autocomplete: 'address_city', class: 'form-control' %>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :address_street,'番地' %><br />
+                      <%= f.text_field :address_street, autocomplete: 'address_street', class: 'form-control' %>
+
+                    <div class="field">
+                      <%= f.label :address_building,'建物' %><br />
+                      <%= f.text_field :address_building, autocomplete: 'address_building', class: 'form-control' %>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :telephone_number,'電話番号(ハイフンなし)' %><br />
+                      <%= f.text_field :telephone_number, autocomplete: 'telephone_number', class: 'form-control' %>
+                    </div>
+                    <br>
+                    <div class="field mb2">
+                      <%= f.label :current_password, "現在のパスワード" %><br />
+                      <%= f.password_field :current_password, autocomplete: "current-password" %>
+                    </div>
+
+                    <div class="field mb2">
+                      <%= f.label :password, "新しいパスワード(6文字以上)" %><br />
+                      <%= f.password_field :password, autocomplete: "new-password" %>
+                    </div>
+
+                    <div class="field mb2">
+                      <%= f.label :password_confirmation, "新しいパスワード(確認用)" %><br />
+                      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                    </div>
+                    <br>
+                    <div class="actions">
+                      <%= f.submit '編集内容を保存', class:"btn btn-success" %>
+                    </div>
+                    <br>
+                <% end %>
+                <div class="container">
+        			<div class="row">
+    					<div class="col-auto mx-auto">
+
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	<br>

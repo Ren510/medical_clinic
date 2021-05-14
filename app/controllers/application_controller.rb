@@ -3,7 +3,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
 	  if resource_name == :patient
-		  patients_my_page_path
+		  my_page_path
 	  elsif resource_name == :admin
 	    admin_root_path
 	  end
@@ -37,8 +37,4 @@ before_action :configure_permitted_parameters, if: :devise_controller?
       :telephone_number
   ])
   end
-
-
-
-
 end

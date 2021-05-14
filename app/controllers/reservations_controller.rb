@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
-  before_action :configure_sign_up_params, only: [:create]
+
   def index
+    @reservations = Reservation.all.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
   end
 
   def show
@@ -17,4 +18,10 @@ class ReservationsController < ApplicationController
 
   def update
   end
+
+  private
+  def memos_params
+     params.require(:reservations).permit(:patient_id,:title,:start_time,:day,:time)
+  end
 end
+

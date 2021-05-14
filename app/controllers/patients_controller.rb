@@ -22,7 +22,7 @@ class PatientsController < ApplicationController
 
   def update
     if @patient.update(patient_params)
-      redirect_to edit_patient_path, notice: '会員情報の更新が完了しました。'
+      redirect_to mypage_path, notice: '会員情報の更新が完了しました。'
     else
       render :edit
     end

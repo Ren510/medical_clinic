@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patient_id: 1
+  title: MyString
+  start_time: 2021-05-14 12:14:43
+  day: 2021-05-14
+  time: MyString
+
+two:
+  patient_id: 1
+  title: MyString
+  start_time: 2021-05-14 12:14:43
+  day: 2021-05-14
+  time: MyString

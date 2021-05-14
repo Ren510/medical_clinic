@@ -10,10 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
 
+ *= require_tree .
  *= require_self
  */
+
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
@@ -23,16 +24,16 @@
   height: 600px;
 }
 .image1 {
-  background-image: url(ninti.png);
+  background-image: image-url("ninti.png");
 }
 .image2 {
-  background-image: url(suimin.png);
+  background-image: image-url("suimin.png");
 }
 .image3 {
-  background-image: url(tekiou.png);
+  background-image: image-url("tekiou.png");
 }
 .image4 {
-  background-image: url(utu.png);
+  background-image: image-url("utu.png");
 }
 
 // スライドショーのバックグラウンドカラーを変更するとき
@@ -68,84 +69,7 @@
   height:     50px;
 }
 
+// topページへ戻る、ボタンの大きさへの記述
 .top-btn {
     width: 100px;
-}
-
-.btn1 {
-    display:  inline-block;
-    color: #fff;
-    text-decoration:  none;
-    background-color: #2196F3;
-    border-radius: 5px;
-    position:  relative;
-    height: 50px;
-    width: 50px;
-    cursor:pointer;
-}
-
-// 対象疾患についての記述
-// うつ病まで移動
-.btn1::before {
-    content:  '';
-    width: 20px;
-    height: 20px;
-    display:  block;
-    border-top: solid 2px;
-    border-right: solid 2px;
-    transform: rotate(135deg);
-    position:  absolute;
-    top: 0px;
-    bottom:  10px;
-    left:  0;
-    right:  0;
-    margin:  auto;
-}
-
-.btn2::before {
-    content:  '';
-    width: 20px;
-    height: 20px;
-    display:  block;
-    border-top: solid 2px;
-    border-right: solid 2px;
-    transform: rotate(135deg);
-    position:  absolute;
-    top: 0px;
-    bottom:  10px;
-    left:  0;
-    right:  0;
-    margin:  auto;
-}
-
-.btn3::before {
-    content:  '';
-    width: 20px;
-    height: 20px;
-    display:  block;
-    border-top: solid 2px;
-    border-right: solid 2px;
-    transform: rotate(135deg);
-    position:  absolute;
-    top: 0px;
-    bottom:  10px;
-    left:  0;
-    right:  0;
-    margin:  auto;
-}
-
-.btn4::before {
-    content:  '';
-    width: 20px;
-    height: 20px;
-    display:  block;
-    border-top: solid 2px;
-    border-right: solid 2px;
-    transform: rotate(135deg);
-    position:  absolute;
-    top: 0px;
-    bottom:  10px;
-    left:  0;
-    right:  0;
-    margin:  auto;
 }
