@@ -30,7 +30,7 @@ ER図
 [テーブル定義書山田拓実.xlsx](https://github.com/Ren510/medical_clinic/files/6425913/default.xlsx)
 
 アプリケーション詳細設計図
-[アプリケーション詳細設計図:山田拓実.xlsx](https://github.com/Ren510/medical_clinic/files/6425991/default.xlsx)
+[アプリケーション詳細設計図:山田拓実.xlsx](https://github.com/Ren510/medical_clinic/files/6478298/default.xlsx)
 
 ## チャレンジ要素一覧
 
