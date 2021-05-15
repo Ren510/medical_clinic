@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
   # 管理者側のデバイス
-   devise_for :admins, path: 'admin', controllers: {
+   devise_for :admin, controllers: {
     sessions: 'admin/sessions',
-    registrations: 'admin/registrations',
   }
   namespace :admin do
-    root 'homes#top'
+    root 'admin#index'
     resources :sicks, only: [:index]
   end
 
