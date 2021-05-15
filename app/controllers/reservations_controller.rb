@@ -5,12 +5,24 @@ class ReservationsController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.find(params[:id])
   end
 
   def new
+    @reservation = Reservation.new
+    @day = params[:day]
+    @time = params[:time]
+    @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
   end
 
   def create
+    @reservation = Reservation.new(reservation_params)
+    if @reservation.save
+      WelcomeMailer.welcome(@reservation).deliver_now # send mail to patient
+      redirect_to reservation_path @reservation.id
+    else
+      render :new
+    end
   end
 
   def edit

@@ -5,9 +5,7 @@ class NotificationMailer < ApplicationMailer
     @patient = patient
     mail(
       subject: "会員登録が完了しました。", #メールのタイトル
-      to: @patient.email #宛先
-    ) do |format|
-      format.text
-    end
+      to: @patient.email, #宛先
+    )
   end
 end

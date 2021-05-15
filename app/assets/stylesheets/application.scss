@@ -10,7 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
+ *= require simple_calendar
  *= require_tree .
  *= require_self
  */
@@ -73,3 +73,4 @@
 .top-btn {
     width: 100px;
 }
+
