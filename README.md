@@ -24,13 +24,13 @@ webで診察を容易に予約できるクリニックサイト
 
 ## 設計書
 ER図
-[ER図山田拓実](https://user-images.githubusercontent.com/78352502/117112127-92ea7900-adc3-11eb-943c-b17b96ad2ae4.png)
+[ER図_山田拓実](https://user-images.githubusercontent.com/78352502/118262302-a5fdf700-b4ef-11eb-8bca-14ccf56707fa.png)
 
 テーブル定義書
-[テーブル定義書山田拓実.xlsx](https://github.com/Ren510/medical_clinic/files/6425913/default.xlsx)
+[テーブル定義書_山田拓実.xlsx](https://github.com/Ren510/medical_clinic/files/6478310/_.xlsx)
 
 アプリケーション詳細設計図
-[アプリケーション詳細設計図:山田拓実.xlsx](https://github.com/Ren510/medical_clinic/files/6425991/default.xlsx)
+[アプリケーション詳細設計図:山田拓実.xlsx](https://github.com/Ren510/medical_clinic/files/6478298/default.xlsx)
 
 ## チャレンジ要素一覧
 
