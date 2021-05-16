@@ -4,8 +4,10 @@
         <div class="col-12 text-center">
             <br>
             <h1>予約画面</h1>
-            <p>3ヶ月先まで予約することができます。</p>
-            <%= link_to"予約確認画面",new_reservation_path,class: "nav-item nav-link" %>
+            <br>
+        </div>
+        　<p>3ヶ月先まで予約することができます。</p>
+        <div align="center"><b>※：<font color="#007BFF">●</font>予約可能日&nbsp;× : 予約済日&nbsp;- : 休診日&nbsp;<font color="#ff8c00">■</font>：<strong>選択日</strong>&nbsp;<font color="#D6FFD6">■</font>：<strong>予約可</strong></b>&nbsp;<font color="#474747">■</font>：<strong>過去予約不可</strong></b>
         </div>
         <div class="col-12 mt-3">
             <%= week_calendar events: @reservations do |date, reservations| %>

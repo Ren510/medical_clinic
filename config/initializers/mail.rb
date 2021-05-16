@@ -4,8 +4,9 @@ if Rails.env.production?
     address: 'smtp.gmail.com',
     domain: 'gmail.com',
     port: 587,
-    user_name: 'Gmail のメールアドレス',
-    password: 'Gmail のパスワード',
+    # 環境変数で隠す
+    user_name: ENV['production_Mail_user_name'],
+    password: ENV['production_Mail_user_password'],
     authentication: 'plain',
     enable_starttls_auto: true
   }
@@ -16,8 +17,9 @@ elsif Rails.env.development?
     address: 'smtp.gmail.com',
     domain: 'gmail.com',
     port: 587,
-    user_name: 'medicalclinic0515@gmail.com',
-    password: 'nyeghcavfmlqcovl',
+    # 環境変数で隠す
+    user_name: ENV['development_Mail_user_name'],
+    password: ENV['development_Mail_user_password'],
     authentication: 'plain',
     enable_starttls_auto: true
   }

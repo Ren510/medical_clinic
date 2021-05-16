@@ -1,4 +1,6 @@
 module ReservationsHelper
+
+
   def times
     times = ["9:00",
             "9:30",
@@ -14,19 +16,41 @@ module ReservationsHelper
             "16:00",
             "16:30"]
   end
+
+  def check_date(day, result)
+    if day < Date.current
+        # 予約があってもなくても過去日の場合は2を返却。
+        # 2 : 過去日（viewは空白にする）
+        return 2
+    end
+    # 過去日じゃなかったら、resultに応じたものを返す
+    return result ? 1 : 0
+
+  end
+
+  def is_holiday
+  end
+
   def check_reservation(reservations, day, time)
-    result = false
+    result = 0
     reservations_count = reservations.count
     # 取得した予約データにdayとtimeが一致する場合はtrue,一致しない場合はfalseを返します
+    if day.wday == 5
+      return 2
+    end
+     if day.wday == 6 && Time.parse(time) > Time.parse('12:00')
+      return 2
+    end
     if reservations_count > 1
       reservations.each do |reservation|
         result = reservation[:day].eql?(day.strftime("%Y-%m-%d")) && reservation[:time].eql?(time)
-        return result if result
+        return check_date(day, result) if result
+
       end
     elsif reservations_count == 1
       result = reservations[0][:day].eql?(day.strftime("%Y-%m-%d")) && reservations[0][:time].eql?(time)
-      return result if result
+      return check_date(day, result) if result
     end
-    return result
+    return check_date(day, result)
   end
 end

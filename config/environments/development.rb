@@ -60,4 +60,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   #config.action_mailer.delivery_method = :letter_opener_web
   #config.action_mailer.perform_deliveries = true
+  
+  # default_url_optionsのhostを指定する/hostが、xxx_urlで指定したときに、割り当てられるホスト名になる
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 end
