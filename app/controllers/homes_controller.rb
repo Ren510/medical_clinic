@@ -4,6 +4,5 @@ class HomesController < ApplicationController
   end
 
   def about
-    puts "作成したキー #{ENV['Google_Maps_API_Key']}"
   end
 end

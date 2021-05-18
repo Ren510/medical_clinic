@@ -1,7 +1,6 @@
 class PatientsController < ApplicationController
   before_action :authenticate_patient!
-  before_action :correct_patient, only: [:edit, :update]
-
+  # before_action :correct_patient, only: [:edit, :update]
 
   def create
     if @patient.save
@@ -13,7 +12,10 @@ class PatientsController < ApplicationController
   end
 
   def show
-    @patient = current_patient
+    @patient = Patient.find(current_patient.id)
+    # @patients = Patient.search(params[:search])
+    @patient_reservations = current_patient.reservations.where("start_time >= ?", DateTime.current).order(day: :desc)
+    @visit_historys = current_patient.reservations.where("start_time < ?", DateTime.current).where("start_time > ?", DateTime.current << 12).order(day: :desc)
   end
 
   def edit
@@ -27,17 +29,7 @@ class PatientsController < ApplicationController
       render :edit
     end
   end
-  
-  def destroy
-    @reservation = Reservation.find(params[:id])
-    if @reservation.destroy
-      flash[:success] = "予約を削除しました。"
-      redirect_to patient_path(current_patient.id)
-    else
-      render :show
-    end
-  end
-  
+
   private
   def patient_params
     params.require(:patient).permit(:first_name,:last_name,:first_name_kana,:last_name_kana,:gender,:birthday,:email,:postal_code,:prefecture_name,:address_city,:address_street,:address_building,:disease,:telephone_number)
@@ -49,6 +41,5 @@ class PatientsController < ApplicationController
      redirect_to patient_path(current_patient)
     end
   end
-
 end
 

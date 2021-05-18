@@ -1,12 +1,13 @@
   class Patients::RegistrationsController < Devise::RegistrationsController
-    # def after_sign_up_path_for(resource)
+    # before_action :configure_sign_up_params, only: [:create]
     #   mypage_path
     # end
 
     def create
       super
-      # NotificationMailer.send_confirm_to_patient(resource).deliver_now
+      # NotificationMailer.send_confirm_to_patient(resource).deliver_no
       WelcomeMailer.welcome(resource).deliver_now
       # @patient = patient
     end
+
   end

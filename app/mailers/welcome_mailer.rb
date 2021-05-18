@@ -6,6 +6,7 @@ class WelcomeMailer < ApplicationMailer
 
 
   def confirm (reservation)
+    @patient = patient
     mail(subject: 'confirm', to: reservation.patient.email)
   end
 

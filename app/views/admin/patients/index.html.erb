@@ -1,0 +1,104 @@
+ <p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<div class="search-form">
+  <%= form_with(scope: :search, url: patients_path, method: :get, local: true) do |f| %>
+    <div class="field">
+      <%= f.label(:first_name, Patient.human_attribute_first_name(:first_name)) %>
+      <%= f.text_field :first_name, value: @search_params[:first_name] %>
+    </div>
+
+    <div class="field">
+      <%= f.label(:first_name, Patient.human_attribute_last_name(:last_name)) %>
+      <%= f.text_field :last_name, value: @search_params[:last_name] %>
+    </div>
+
+    <div class="field">
+      <%= f.label(:gender, Patient.human_attribute_name(:gender)) %>
+      <%= f.collection_radio_buttons(:gender, Patient.genders, :first, :first) do |r| %>
+        <%= tag.div(class: 'form-check form-check-inline') do %>
+          <%= r.radio_button(checked: r.value == @search_params[:gender], class: 'form-check-input') + f.label(Patient.human_attribute_name("gender.#{r.text}"), class: 'form-check-label') %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label(:birthday, Patient.human_attribute_name(:birthday)) %>
+      <%= f.date_field :birthday_from, value: @search_params[:birthday_from] %> ~ <%= f.date_field :birthday_to, value: @search_params[:birthday_to] %>
+    </div>
+
+    <div class="field">
+      <%= f.label(:prefecture_code, Patient.human_attribute_name(:prefecture_code)) %>
+      <%= f.collection_select(:prefecture_code, Prefecture.all, :id, :name, selected: @search_params[:prefecture_code], include_blank: t('helpers.select.include_blank')) %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit(t('helpers.submit.search')) %>
+  </div>
+  <% end %>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Birthday</th>
+      <th>Prefecture</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @Patients.each do |patient| %>
+      <tr>
+        <tr><%= patient.first_name %> <%= @patient.last_name %></td>
+        <td><%= patient.gender %></td>
+        <td><%= patient.birthday %></td>
+        <td><%= patient.prefecture.name %></td>
+        <td><%= link_to 'Show', patient %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <br>
+
+  <%= link_to 'New Patient', new_patient_path %>
+
+ <div class="container">
+      <div class="row">
+        <div class="col-auto mx-auto">
+          <h3><p class="text-left">会員一覧</p></h3>
+        <table class="table table-hover table-inverse">
+          <thead>
+            <tr>
+              <th>会員ID</th>
+              <th>氏名</th>
+              <th>メールアドレス</th>
+              <th>ステータス</th>
+            </tr>
+              <% @patients.each do |patient| %>
+            <tr>
+              <td> <%= patient.id %> </td>
+              <td> <%= link_to patient.first_name, admin_patient_path(patient.id) %> <%= link_to patient.last_name, admin_patient_path(patient.id) %></td>
+              <td> <%= patient.email %> </td>
+              <td> <%= patient.disease %> </td>
+              <td>  </td>
+              <th colspan="3"></th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-auto mx-auto">
+      <%= paginate @patients %>
+      </div>
+    </div>
+  </div>

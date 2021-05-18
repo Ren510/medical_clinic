@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
+  # before_action :admin
 
   # GET /resource/sign_in
   # def new
@@ -9,9 +9,15 @@ class Admin::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+
+  def create
+  　@admin = admin.new(admin_params)
+   if @admin.save
+     redirect_to admin_root_path, notice:”ユーザー「#{@user.name}」を登録しました”
+   else
+     render :new
+   end
+  end
 
   # DELETE /resource/sign_out
   # def destroy
@@ -24,4 +30,8 @@ class Admin::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  def admin_params
+   params.require(:admin).permit(:email, :password)
+  end
+  
 end

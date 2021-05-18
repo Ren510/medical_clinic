@@ -1,4 +1,6 @@
 class Reservation < ApplicationRecord
+  belongs_to :patient
+
 
   def self.reservations_after_three_month
     # 今日から3ヶ月先までのデータを取得

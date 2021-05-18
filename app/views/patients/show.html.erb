@@ -23,85 +23,69 @@
 					　 <tr><th>生年月日</th><td><%= @patient.birthday %></td></tr>
 					　 <tr><th>メールアドレス</th><td><%= @patient.email %></td></tr>
 					　 <tr><th>郵便番号</th><td><%= @patient.postal_code %></td></tr>
-					　 <tr><th>都道府県</th><td><%= @patient.prefecture_code %></td></tr>
+					　 <tr><th>都道府県</th><td><%= @patient.prefecture_name %></td></tr>
 					　 <tr><th>市区町村</th><td><%= @patient.address_city %></td></tr>
 					　 <tr><th>番地</th><td><%= @patient.address_street %></td></tr>
 					　 <tr><th>建物</th><td><%= @patient.address_building %></td></tr>
 					　 <tr><th>電話番号(ハイフンなし)</th><td><%= @patient.telephone_number %></td></tr>
 					　 <tr><th>お困りの症状</th><td><%= @patient.disease %></td></tr>
-
 					</table><br>
 				</div>
 			</div>
-			<!-- patients/show.html.erb -->
 
-<!--<div class="container">-->
-<!--  <div class="row">-->
-<!--    <div class="col-12 text-center title">-->
-<!--      <h1>マイページ</h1>-->
-<!--    </div>-->
-<!--    <div class="col-12 mt-3 text-center content">-->
-<!--      <div>-->
-<!--        <label><strong>名前：</strong></label>-->
-<!--        <p style="display:inline;"><%#= @patient.first_name %></p>-->
-<!--      </div>-->
-<!--      <div>-->
-<!--        <label><strong>メールアドレス：</strong></label>-->
-<!--        <p style="display:inline;"><%#= @patient.email %></p>-->
-<!--      </div>-->
-<!--      <div class="col-12 mt-3 text-center mx-auto">-->
-<!--        <h3>予約一覧</h3>-->
-<!--        <table class="table">-->
-<!--          <thead>-->
-<!--            <tr>-->
-<!--              <th scope="col">予約日</th>-->
-<!--              <th></th>-->
-<!--            </tr>-->
-<!--          </thead>-->
-<!--          <tbody>-->
-<!--            <#% @patient_reservations.each do |patient_reservation| %>-->
-<!--              <td>-->
-<!--                <%#= patient_reservation.day %>-->
-<!--                <%#= patient_reservation.time %>-->
-<!--              </td>-->
-<!--              <td>-->
-<!--                <%#= link_to '削除', reservation_path(patient_reservation.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>-->
-<!--              </td>-->
-<!--            </tr>-->
-<!--            <#% end %>-->
-<!--            <#% if @patient_reservations.blank? %>-->
-<!--              <tr>-->
-<!--                <td>予約はありません。</td>-->
-<!--              </tr>-->
-<!--            <#% end %>-->
-<!--          </tbody>-->
-<!--        </table>-->
-<!--      </div>-->
-<!--      <div class="col-12 mt-3 text-center mx-auto">-->
-<!--        <h3>来院履歴</h3>-->
-<!--        <table class="table">-->
-<!--          <thead>-->
-<!--            <tr>-->
-<!--              <th scope="col">予約日</th>-->
-<!--            </tr>-->
-<!--          </thead>-->
-<!--          <tbody>-->
-<!--            <%# @visit_historys.each do |visit_history| %>-->
-<!--              <tr>-->
-<!--                <td>-->
-<!--                  <%#= visit_history.day %>-->
-<!--                  <%#= visit_history.time %>-->
-<!--                </td>-->
-<!--              </tr>-->
-<!--            <%# end %>-->
-<!--            <%# if @visit_historys.blank? %>-->
-<!--              <tr>-->
-<!--                <td>来院履歴はありません。</td>-->
-<!--              </tr>-->
-<!--            <%# end %>-->
-<!--          </tbody>-->
-<!--        </table>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+ <!--patients/show.html.erb -->
+  <div class="container">
+    <div class="col-12 mt-3 text-center mx-auto">
+      <h3>予約一覧</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">予約日</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @patient_reservations.each do |patient_reservation| %>
+            <td>
+              <%= patient_reservation.day %>
+              <%= patient_reservation.time %>
+            </td>
+            <td>
+              <%= link_to '削除', reservation_path(patient_reservation.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>
+            </td>
+          </tr>
+          <% end %>
+          <% if @patient_reservations.blank? %>
+            <tr>
+              <td>予約はありません。</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 mt-3 text-center mx-auto">
+      <h3>来院履歴</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">予約日</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @visit_historys.each do |visit_history| %>
+            <tr>
+              <td>
+                <%= visit_history.day %>
+                <%= visit_history.time %>
+              </td>
+            </tr>
+          <% end %>
+          <% if @visit_historys.blank? %>
+            <tr>
+              <td>来院履歴はありません。</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -16,7 +16,7 @@ class Admin::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   # def create
-    # super
+  #   super
   # end
 
   # GET /resource/edit
@@ -64,4 +64,14 @@ class Admin::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  protected
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up, keys: [
+        :name,
+        :email,
+        :introduction,
+    ])
+    end
+
 end

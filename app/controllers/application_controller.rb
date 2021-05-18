@@ -5,16 +5,20 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 	  if resource_name == :patient
 		  mypage_path
 	  elsif resource_name == :admin
-	    admin_index_path
+	    bye
+	    admin_root_path
 	  end
   end
 
   def after_sign_out_path_for(resource)
-    root_path
+    if resource_name == :patient
+		  root_path
+	  elsif resource_name == :admin
+	    root_path
+	  end
   end
 
   protected
-
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [
       :first_name,
@@ -25,7 +29,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
       :birthday,
       :email,
       :postal_code,
-      :prefecture_code,
+      :prefecture_name,
       :address_city,
       :address_street,
       :address_building,

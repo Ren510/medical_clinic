@@ -1,4 +1,53 @@
+    <% if patient_signed_in? %>
     <%= flash[:notice] %>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                    <p></p>
+                    <h1><strong><トップページについて></strong></h1>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-auto mx-auto">
+                    <p></p>
+                    <h4>Webで診察を容易に予約できる</h4>
+                    <h4>クリニックサイトです。</h4>
+                    <p></p>
+                    <h4>初診の方は、インターネットまたはお電話にて</h4>
+                    <h4>予約していただきます。</h4>
+                </div>
+            </div>
+        </div>
+    <% elsif admin_signed_in? %>
+    <%= flash[:notice] %>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                    <p></p>
+                    <h1><strong><トップページについて></strong></h1>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-auto mx-auto">
+                    <p></p>
+                    <h4>Webで診察を容易に予約できる</h4>
+                    <h4>クリニックサイトです。</h4>
+                    <p></p>
+                    <h4>初診の方は、インターネットまたはお電話にて</h4>
+                    <h4>予約していただきます。</h4>
+                </div>
+            </div>
+        </div>
+    <% else %>
+        <%= flash[:notice] %>
         <div class="container">
             <div class="row">
                 <div class="col-md-1"></div>
@@ -48,3 +97,4 @@
             <h2><電話予約の方はこちら></h2>
             <h5><strong>TEL:</strong>03-xxx-xxxx</h5>
         </div>
+    <% end %>

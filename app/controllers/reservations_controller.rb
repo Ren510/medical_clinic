@@ -1,11 +1,12 @@
 class ReservationsController < ApplicationController
 
   def index
+    # 3ヶ月先まで予約することができます。
     @reservations = Reservation.all.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
   end
 
   def show
-    @patient = Patient.find(current_patient.id)
+    @reservation = Reservation.find(params[:id])
   end
 
   def new
@@ -17,11 +18,8 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.patient_id = current_patient.id
     # if reservation_params[:start_time].wday == 1
-    # end
-
-    # def date_before_start
-    #   errors.add(:start_time, "は過去の日付を選択できません") if start_time < Date.today
     # end
 
     # 休診日の曜日を決めるのはこちらから(月曜日: 1,火曜日: 2,水曜日: 3,木曜日 :4,金曜日 :5,土曜日 :6,日曜日 :0)
@@ -29,8 +27,15 @@ class ReservationsController < ApplicationController
       # エラーメッセージ入れる場合はここを編集する
       # redirect_to reservations_path and return
     end
+    if Time.now >= reservation_params[:start_time]
+      flash[:notice] = "予約可能時間を過ぎています！！"
+      render :show
+      return
+    end
+
     if @reservation.save
       # WelcomeMailer.welcome(@reservation).deliver_now # send mail to patient
+
       redirect_to reservation_path @reservation.id
     else
       render :new
@@ -41,9 +46,22 @@ class ReservationsController < ApplicationController
   end
 
   def update
+    @reservation = Reservation.find(params[:id])
   end
 
+  def destroy
+    # @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.find(params[:id])
 
+    
+
+    if @reservation.destroy
+      flash[:success] = "予約を削除しました。"
+      redirect_to :mypage
+    else
+      render :show
+    end
+  end
 
   private
   def reservation_params

@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_05_14_165918) do
     t.string "address_building"
     t.date "birthday", null: false
     t.integer "gender"
+    r.
     t.index ["email"], name: "index_patients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
   end
