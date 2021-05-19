@@ -23,7 +23,8 @@ class ReservationsController < ApplicationController
     # end
 
     # 休診日の曜日を決めるのはこちらから(月曜日: 1,火曜日: 2,水曜日: 3,木曜日 :4,金曜日 :5,土曜日 :6,日曜日 :0)
-    if DateTime.parse(reservation_params[:start_time]).wday == 5 || DateTime.parse(reservation_params[:start_time]).wday == 6
+    # その後、reservations_helper.rbで、時間帯を指定する
+    if DateTime.parse(reservation_params[:start_time]).wday == 5 || DateTime.parse(reservation_params[:start_time]).wday == 6 || DateTime.parse(reservation_params[:start_time]).wday == 0
       # エラーメッセージ入れる場合はここを編集する
       # redirect_to reservations_path and return
     end
@@ -52,9 +53,6 @@ class ReservationsController < ApplicationController
   def destroy
     # @reservation = Reservation.new(reservation_params)
     @reservation = Reservation.find(params[:id])
-
-    
-
     if @reservation.destroy
       flash[:success] = "予約を削除しました。"
       redirect_to :mypage

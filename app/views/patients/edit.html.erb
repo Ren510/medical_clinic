@@ -14,7 +14,7 @@
                 <% if flash[:notice] %>
                 <p class="text-active"><%= flash[:notice] %></p>
                 <% end %>
-                <%= form_with model:@patient, url:patient_path, local:true do |f| %>
+                <%= form_with model: @patient, url:patient_path, local:true do |f| %>
                     <div class="field">
                       <%= f.label :first_name, "(姓)", class: "patient_name" %> <%= f.text_field :first_name, autofocus: true, :placeholder =>"山田" %>
                       <%= f.label :last_name, "(名)", class: "patient_name" %> <%= f.text_field :last_name, :placeholder =>"太郎" %>

@@ -23,6 +23,7 @@ class PatientsController < ApplicationController
   end
 
   def update
+    @patient = Patient.find(current_patient.id)
     if @patient.update(patient_params)
       redirect_to mypage_path, notice: '会員情報の更新が完了しました。'
     else

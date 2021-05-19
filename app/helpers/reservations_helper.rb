@@ -35,12 +35,20 @@ module ReservationsHelper
     result = 0
     reservations_count = reservations.count
     # 取得した予約データにdayとtimeが一致する場合はtrue,一致しない場合はfalseを返します
+    # reservations_controllerで日にちを設定する
+    # 金曜日を全休に設定 
     if day.wday == 5
       return 2
     end
-     if day.wday == 6 && Time.parse(time) > Time.parse('12:00')
+    # 土曜日の午後は休診に設定
+    if day.wday == 6 && Time.parse(time) > Time.parse('12:00')
       return 2
     end
+    日曜日の午前中を休診にしたい
+    if day.wday == 0 && Time.parse(time) > Time.parse('12:00')
+      return 2
+    end
+   
     if reservations_count > 1
       reservations.each do |reservation|
         result = reservation[:day].eql?(day.strftime("%Y-%m-%d")) && reservation[:time].eql?(time)
