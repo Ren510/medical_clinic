@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
-  # 管理者側のデバイス
-  devise_for :admin, controllers: {
-    :sessions => 'admin/sessions',
-  }
-  namespace :admin do
-    root 'admin#index'
-    resources :sicks, only: [:index]
-    resources :patients
-  end
+  devise_for :admin_users, ActiveAdmin::Devise.config
+ 
+  # namespace :admin do
+  #   root 'admin#index'
+  #   resources :sicks, only: [:index]
+  #   resources :patients
+  # end
 
   # ユーザー側のデバイス
   devise_for :patients, controllers: {

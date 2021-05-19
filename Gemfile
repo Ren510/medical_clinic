@@ -80,3 +80,4 @@ gem 'kaminari','~> 1.2.1'
 gem 'jp_prefecture'
 gem 'dotenv-rails'
 gem "simple_calendar", "~> 2.0"
+gem 'activeadmin'
