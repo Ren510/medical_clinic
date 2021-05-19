@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
- 
+  ActiveAdmin.routes(self)
+
   # namespace :admin do
   #   root 'admin#index'
   #   resources :sicks, only: [:index]
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   resources :reservations
   resources :maps, only: [:about]
   resources :patients, only: [:edit, :update]
-  resources :admin, only: [:index, :show, :edit, :update]
+  # resources :admin, only: [:index, :show, :edit, :update]
   resources :sicks, only: [:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # if Rails.env.development?

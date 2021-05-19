@@ -4,16 +4,15 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   def after_sign_in_path_for(resource)
 	  if resource_name == :patient
 		  mypage_path
-	  elsif resource_name == :admin
-	    bye
-	    admin_root_path
+	  elsif resource_name == :admin_user
+	    admin_dashboard_path
 	  end
   end
 
   def after_sign_out_path_for(resource)
     if resource_name == :patient
 		  root_path
-	  elsif resource_name == :admin
+	  elsif resource_name == :admin_user
 	    root_path
 	  end
   end
