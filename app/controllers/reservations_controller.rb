@@ -19,8 +19,6 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.patient_id = current_patient.id
-    # if reservation_params[:start_time].wday == 1
-    # end
 
     # 休診日の曜日を決めるのはこちらから(月曜日: 1,火曜日: 2,水曜日: 3,木曜日 :4,金曜日 :5,土曜日 :6,日曜日 :0)
     # その後、reservations_helper.rbで、時間帯を指定する
@@ -35,8 +33,8 @@ class ReservationsController < ApplicationController
     end
 
     if @reservation.save
-      # WelcomeMailer.welcome(@reservation).deliver_now # send mail to patient
 
+      WelcomeMailer.confirm(@reservation).deliver_now # send mail to patient
       redirect_to reservation_path @reservation.id
     else
       render :new

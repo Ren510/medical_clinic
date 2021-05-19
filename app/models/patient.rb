@@ -4,24 +4,6 @@ class Patient < ApplicationRecord
   # ユーザの性別enum(男: 0,女: 1)
   enum gender: { man: 0, woman: 1}
 
-  # ユーザの検索で使用する
-  # belongs_to :prefecture
-
-  # scope :search, -> (search_params) do
-  #   return if search_params.blank?
-
-  #   name_like(search_params[:name])
-  #     .gender_is(search_params[:gender])
-  #     .birthday_from(search_params[:birthday_from])
-  #     .birthday_to(search_params[:birthday_to])
-  #     .prefecture_id_is(search_params[:prefecture_id])
-  # end
-  # scope :name_like, -> (name) { where('name LIKE ?', "%#{name}%") if name.present? }
-  # scope :gender_is, -> (gender) { where(gender: gender) if gender.present? }
-  # scope :birthday_from, -> (from) { where('? <= birthday', from) if from.present? }
-  # scope :birthday_to, -> (to) { where('birthday <= ?', to) if to.present? }
-  # scope :prefecture_id_is, -> (prefecture_id) { where(prefecture_id: prefecture_id) if prefecture_id.present? }
-
    # ユーザーのデバイス
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

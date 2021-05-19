@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_042736) do
+ActiveRecord::Schema.define(version: 2021_05_19_130511) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 2021_05_19_042736) do
     t.string "disease", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "postcode"
     t.integer "prefecture_code"
     t.string "address_city"
     t.string "address_street"
@@ -66,7 +65,6 @@ ActiveRecord::Schema.define(version: 2021_05_19_042736) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer "patient_id"
-    t.string "title"
     t.datetime "start_time"
     t.date "day"
     t.string "time"

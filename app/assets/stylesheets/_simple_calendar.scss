@@ -5,19 +5,20 @@
     text-align: center;
     // background-color: ;
   }
+  // 曜日の欄の色
   th {
     background-color: #FFFFCC;
   }
-  .time {
-    background-color: #FFFF99;
-  }
+  // 当日の色
    .today {
      background-color: #ff8c00;
    }
+  // 過去の日にちの色
    .past {
      background-color: #474747;
 
    }
+  // 未来の日にちの色
    .future {
      background-color: #D6FFD6;
    }
