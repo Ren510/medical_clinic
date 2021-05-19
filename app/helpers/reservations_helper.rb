@@ -40,12 +40,12 @@ module ReservationsHelper
     if day.wday == 5
       return 2
     end
-    # 土曜日の午後は休診に設定
+    # 土曜日の午後は休診に
     if day.wday == 6 && Time.parse(time) > Time.parse('12:00')
       return 2
     end
-    日曜日の午前中を休診にしたい
-    if day.wday == 0 && Time.parse(time) > Time.parse('12:00')
+    # 日曜日の午前中は休診
+    if day.wday == 0 && Time.parse(time) < Time.parse('12:00')
       return 2
     end
    
