@@ -30,5 +30,4 @@ class Admin::PatientsControllerTest < ActionDispatch::IntegrationTest
     get admin_patients_withdraw_url
     assert_response :success
   end
-
 end

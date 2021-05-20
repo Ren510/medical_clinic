@@ -19,6 +19,70 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
+// トップページについて
+// topのマークの色
+.size1{
+  color: #000000;
+}
+
+// topの矢印の色
+.size2{
+  color: #191970;
+}
+// 初診の方はこちらの色
+.size3{
+  color: #007BFF;
+}
+
+// 再診の方はこちらの色
+.size4{
+  color: #28A745;
+}
+
+// 再診の方はこちらの色
+.size5{
+  color: #000000;
+}
+
+/*topの初診クリック中のリンクの色*/
+.btn-br {
+  a:active {color:#fff;}
+  color: initial!important;
+}
+/*クリック中のリンクの色*/
+.btn-br:hover {color:#ffffff!important;}
+
+.btn-br:focus {color:#ffffff!important;}
+
+/*topの再診クリック中のリンクの色*/
+.btn-bs {
+  a:active {color:#fff;}
+  color: initial!important;
+}
+/*クリック中のリンクの色*/
+.btn-bs:hover {color:#ffffff!important;}
+
+.btn-bs:focus {color:#ffffff!important;}
+
+/*topの管理人のクリック中のリンクの色*/
+.btn-ar {
+  color:#38678b;
+}
+/*クリック中のリンクの色*/
+.btn-ar:hover {color:#ffffff!important;}
+
+.btn-ar:focus {color:#ffffff!important;}
+
+/*sicksのクリック中のリンクの色*/
+.btn-danger
+  {background-color:#dc3545!important;}
+
+/*クリック中のリンクの色*/
+.btn-s:hover {color:#ffffff!important;}
+
+.btn-s:focus {color:#ffffff!important;}
+
+
  /* 高さを指定することにより画像が表示される */
 #box{
   height: 600px;

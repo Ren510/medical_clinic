@@ -5,5 +5,4 @@ class SicksControllerTest < ActionDispatch::IntegrationTest
     get sicks_index_url
     assert_response :success
   end
-
 end

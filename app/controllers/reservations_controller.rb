@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  before_action :authenticate_patient!
 
   def index
     # 3ヶ月先まで予約することができます。
@@ -41,9 +42,6 @@ class ReservationsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
     @reservation = Reservation.find(params[:id])
   end
@@ -51,7 +49,8 @@ class ReservationsController < ApplicationController
   def destroy
     # @reservation = Reservation.new(reservation_params)
     @reservation = Reservation.find(params[:id])
-    if @reservation.destroy
+    if @reservation.patient_id == current_patient.id
+      @reservation.destroy
       flash[:success] = "予約を削除しました。"
       redirect_to :mypage
     else
@@ -60,8 +59,8 @@ class ReservationsController < ApplicationController
   end
 
   private
+
   def reservation_params
-     params.require(:reservation).permit(:patient_id,:title,:start_time,:day,:time)
+    params.require(:reservation).permit(:patient_id, :title, :start_time, :day, :time)
   end
 end
-

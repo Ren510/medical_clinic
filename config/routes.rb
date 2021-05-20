@@ -1,22 +1,20 @@
 Rails.application.routes.draw do
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  # namespace :admin do
-  #   root 'admin#index'
-  #   resources :sicks, only: [:index]
-  #   resources :patients
+  # namespace :admins do
+
   # end
 
   # ユーザー側のデバイス
   devise_for :patients, controllers: {
     :sessions => 'patients/sessions',
-    :registrations => 'patients/registrations'
+    :registrations => 'patients/registrations',
   }
 
   root 'homes#top'
   get 'about' => "homes#about"
+  get 'admins' => "homes#admins"
   get 'patients/mypage' => 'patients#show', as: 'mypage'
   get 'search' => 'searches#search'
   resources :reservations

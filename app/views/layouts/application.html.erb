@@ -20,13 +20,14 @@
               <ul class="navbar-nav ml-auto">
               <% if patient_signed_in? %>
                 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                      <div class="navbar-nav">
-                        <%= link_to"当院について",about_path,class: "nav-item nav-link" %>
-                        <%= link_to"マイページ",mypage_path,class: "nav-item nav-link" %>
-                        <%= link_to"予約はこちら",reservations_path,class: "nav-item nav-link" %>
-                        <%= link_to "ログアウト", destroy_patient_session_path, method: :delete, class: 'nav-item nav-link' %>
+                  <nav class="far fa-grin-wink fa-lg navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">ようこそ、<%= current_patient.first_name %>さん!</a>
+                      <div class=" navbar-nav">
+
+                        <%= link_to"当院について",about_path,class: "fas fa-hospital nav-item nav-link" %>
+                        <%= link_to"マイページ",mypage_path,class: "fas fa-user-circle nav-item nav-link" %>
+                        <%= link_to"予約はこちら",reservations_path,class: "fas fa-calendar-check nav-item nav-link" %>
+                        <%= link_to "ログアウト", destroy_patient_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-item nav-link' %>
                       </div>
                     </div>
                   </nav>
@@ -57,15 +58,15 @@
               <!--    </div>-->
               <% else %>
                 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <nav class="fas fa-ellipsis-v navbar navbar-expand-lg navbar-light bg-light">
                     <a class="navbar-brand" href="#">Navbar</a>
                       <div class="navbar-nav">
-                        <%= link_to"TOP",root_path,class: "nav-item nav-link" %>
-                        <%= link_to"当院について",about_path,class: "nav-item nav-link" %>
-                        <%= link_to"対象疾患一覧",sicks_path,class: "nav-item nav-link" %>
-                        <%#= link_to"医師一覧",admin_index_path,class: "nav-item nav-link" %>
-                        <%= link_to"初診",new_patient_registration_path,class: "nav-item nav-link" %>
-                        <%= link_to"再診",new_patient_session_path,class: "nav-item nav-link" %>
+                        <%= link_to"TOP",root_path,class: "fab fa-meetup nav-item nav-link" %>
+                        <%= link_to"当院について",about_path,class: "fas fa-hospital nav-item nav-link" %>
+                        <%= link_to"対象疾患一覧",sicks_path,class: "fas fa-head-side-virus nav-item nav-link" %>
+                        <%= link_to"医師一覧",admins_path,class: "fas fa-user-md nav-item nav-link" %>
+                        <%= link_to"初診",new_patient_registration_path,class: "fas fa-hospital-user nav-item nav-link" %>
+                        <%= link_to"再診",new_patient_session_path,class: "fas fa-stethoscope nav-item nav-link" %>
                       </div>
                     </div>
                   </nav>
@@ -94,7 +95,7 @@
               <tr>
                 <td><a class="navbar-brand p-3" href="/"><%= image_tag('m_c_white.png') %></a></td>
                 <td><th>webで診察を容易に予約できるクリニックサイト   <%= link_to "当院について", about_path,class: 'text-white-50' %></td>
-                <%= link_to"管理者用LOGIN",new_admin_user_session_path,class: "nav-item nav-link" %></th>
+                <%= link_to"管理者用LOGIN",new_admin_user_session_path,class: "nav-item nav-link btn-ar" %></th>
               </tr>
             </table>
           </div>

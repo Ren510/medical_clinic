@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-1"></div>
                 <p></p>
-                <h1><strong><マイページ></strong></h1>
+                <h1><strong><i class="fas fa-user-circle"></i>マイページ</strong></h1>
             </div>
         </div>
     </div>
@@ -15,9 +15,11 @@
 					    <p class="text-active"><%= flash[:notice] %></p>
 					  <% end %>
 					</div>
-					<table class="table table-hover table-inverse">
-						<h2>登録情報         <%= link_to "編集する", edit_patient_path(@patient.id), class: "btn btn-success" %></h2>
-					   	<tr><th>氏名</th><td><%= @patient.first_name %> <%= @patient.last_name %></td></tr>
+					<table class="table table-sm table-dark">
+					  
+						<h2><strong>登録情報</strong>       <div id=""><%= link_to "編集する", edit_patient_path(@patient.id), class: "btn btn-success" %></h2></div>
+						<th scope="col"></th>
+					   <tr><th>氏名</th><td><%= @patient.first_name %> <%= @patient.last_name %></td></tr>
 					　 <tr><th>カナ</th><td><%= @patient.first_name_kana %> <%= @patient.last_name_kana %></td></tr>
 					　 <tr><th>性別</th><td><%= @patient.gender %></td></tr>
 					　 <tr><th>生年月日</th><td><%= @patient.birthday %></td></tr>
@@ -29,6 +31,7 @@
 					　 <tr><th>建物</th><td><%= @patient.address_building %></td></tr>
 					　 <tr><th>電話番号(ハイフンなし)</th><td><%= @patient.telephone_number %></td></tr>
 					　 <tr><th>お困りの症状</th><td><%= @patient.disease %></td></tr>
+					　</th>
 					</table><br>
 				</div>
 			</div>

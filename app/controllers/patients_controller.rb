@@ -32,15 +32,15 @@ class PatientsController < ApplicationController
   end
 
   private
+
   def patient_params
-    params.require(:patient).permit(:first_name,:last_name,:first_name_kana,:last_name_kana,:gender,:birthday,:email,:postal_code,:prefecture_name,:address_city,:address_street,:address_building,:disease,:telephone_number)
+    params.require(:patient).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :gender, :birthday, :email, :postal_code, :prefecture_name, :address_city, :address_street, :address_building, :disease, :telephone_number)
   end
 
   def correct_patient
     @patient = Patient.find(params[:id])
     if current_patient != @patient
-     redirect_to patient_path(current_patient)
+      redirect_to patient_path(current_patient)
     end
   end
 end
-

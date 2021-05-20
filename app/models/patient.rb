@@ -2,15 +2,13 @@ class Patient < ApplicationRecord
   has_many :reservations, dependent: :destroy
 
   # ユーザの性別enum(男: 0,女: 1)
-  enum gender: { man: 0, woman: 1}
+  enum gender: { man: 0, woman: 1 }
 
-   # ユーザーのデバイス
+  # ユーザーのデバイス
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-
 
   # validates :last_name, presence: true
   # validates :first_name, presence: true

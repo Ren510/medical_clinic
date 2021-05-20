@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-md-1"></div>
                     <p></p>
-                    <h1><strong><トップページについて></strong></h1>
+                    <h1><i class="fab fa-meetup fa-lg size1"></i><strong>トップページについて</strong></h1>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                 <div class="col-auto mx-auto">
                     <p></p>
                     <h4>Webで診察を容易に予約できる</h4>
-                    <h4>クリニックサイトです。</h4>
+                    <h4><i class="fas fa-arrow-alt-circle-right size2"></i>クリニックサイトです。</h4>
                     <p></p>
                     <h4>初診の方は、インターネットまたはお電話にて</h4>
                     <h4>予約していただきます。</h4>
@@ -77,15 +77,15 @@
             <table class="table table-hover table-inverse">
                 <thead>
                     <tr>
-                        <td><h2><初診の方はこちら></h2>
+                        <td><h2><i class="fas fa-hospital-user size3"></i>初診の方はこちら</h2>
                         <p></p>
-                        <%= link_to "インターネット予約画面(初診)", new_patient_registration_path, class: 'btn btn-outline-primary btn-lg' %>
+                        <%= link_to "インターネット予約画面(初診)", new_patient_registration_path, class: 'btn btn-outline-primary btn-lg btn-br' %>
                         <td>
                         <td></td>
                         <td></td>
-                        <td><h2><再診の方はこちら></h2>
+                        <td><h2><i class="fas fa-stethoscope size4"></i>再診の方はこちら</h2>
                         <p></p>
-                        <%= link_to "インターネット予約画面(再診)", new_patient_session_path, class: 'btn btn-outline-success btn-lg' %>
+                        <%= link_to "インターネット予約画面(再診)", new_patient_session_path, class: 'btn btn-outline-success btn-lg btn-bs' %>
                         </td>
                     </tr>
                 <thead>
@@ -94,7 +94,8 @@
         <br>
         <br>
         <div class="container text-center">
-            <h2><電話予約の方はこちら></h2>
+            <h2><i class="fas fa-phone-square-alt fa-lg size5"></i>電話予約の方はこちら</h2>
             <h5><strong>TEL:</strong>03-xxx-xxxx</h5>
         </div>
+        
     <%# end %>

@@ -15,5 +15,4 @@ class PatientsControllerTest < ActionDispatch::IntegrationTest
     get patients_update_url
     assert_response :success
   end
-
 end
