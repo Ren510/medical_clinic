@@ -18,3 +18,19 @@
 //= require turbolinks
 
 //= require_tree .
+
+// トップページのアニメーションについての記述
+$(document).on('turbolinks:load', function() {
+  const CLASSNAME = "-visible";
+  const TIMEOUT = 4000;
+  const target = $('.title');
+
+  setInterval(() => {
+    target.addClass(CLASSNAME);
+    console.log(target.attr('class'))
+    setTimeout(() => {
+      target.removeClass(CLASSNAME)
+      console.log(target.attr('class'))
+    }, TIMEOUT);
+  }, TIMEOUT * 2);
+});

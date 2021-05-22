@@ -30,9 +30,8 @@ ActiveAdmin.register AdminUser do
   # 詳細ページ
   show do
     attributes_table do
-      row :id
       row :image do |au|
-        attachment_image_tag au, :image
+        attachment_image_tag au, :image, :fill, 300, 300
       end
       row :name
       row :email
