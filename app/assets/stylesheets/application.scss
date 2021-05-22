@@ -57,7 +57,7 @@
 
 // topページのmain.jpegの画像について
 .header {
-background-image: image-url(main.jpeg);
+background-image: image-url("main.jpeg");
 height: 500px;
 background-size: cover;
 background-position: center;
