@@ -57,7 +57,7 @@
 
 // topページのmain.jpegの画像について
 .header {
-background-image: url(main.jpeg);
+background-image: image-url(main.jpeg);
 height: 500px;
 background-size: cover;
 background-position: center;
@@ -92,7 +92,7 @@ background-position: center;
 }
 
 .wrap {
-  background: url('bg.svg');
+  background: image-url('bg.svg');
 }
 
 .jagged-border {
