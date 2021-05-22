@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
   before_action :authenticate_patient!
-  # before_action :correct_patient, only: [:edit, :update]
+  before_action :correct_patient, only: [:edit, :update]
 
   def create
     if @patient.save
