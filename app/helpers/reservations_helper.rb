@@ -56,6 +56,8 @@ module ReservationsHelper
     elsif reservations_count == 1
       result = reservations[0][:day].eql?(day.strftime("%Y-%m-%d")) && reservations[0][:time].eql?(time)
       return check_date(day, result) if result
+    elsif reservations_count == 0
+      return 0
     end
     check_date(day, result)
   end

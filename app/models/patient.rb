@@ -10,22 +10,22 @@ class Patient < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # validates :last_name, presence: true
-  # validates :first_name, presence: true
-  # validates :last_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
-  # validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
-  # validates :email, presence: true, uniqueness: true
-  # validates :postal_code, presence: true, format: { with: /\A\d{7}\z/ }
-  # validates :address_city, presence: true
-  # validates :telephone_number, presence: true, format: { with: /\A\d{10,11}\z/ }
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
+  validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
+  validates :email, presence: true, uniqueness: true
+  validates :postal_code, presence: true, format: { with: /\A\d{7}\z/ }
+  validates :address_city, presence: true
+  validates :telephone_number, presence: true, format: { with: /\A\d{10,11}\z/ }
 
-  # def full_name
-  #   first_name + " " + last_name
-  # end
+  def full_name
+    first_name + " " + last_name
+  end
 
-  # def full_name_kana
-  #   first_name_kana + " " + last_name_kana
-  # end
+  def full_name_kana
+    first_name_kana + " " + last_name_kana
+  end
 
   # ユーザの新規登録で、郵便番号入力した際に住所自動入力するための記述
   include JpPrefecture
