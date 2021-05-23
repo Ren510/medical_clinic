@@ -27,7 +27,7 @@ ER図
 <img width="651" alt="ER図:山田拓実" src="https://user-images.githubusercontent.com/78352502/119254175-d9c3d580-bbef-11eb-9fc9-ab837896798b.png">
 
 テーブル定義書
-[テーブル定義書_山田拓実.xlsx](https://github.com/Ren510/medical_clinic/files/6478310/_.xlsx)
+[テーブル定義書_山田拓実.xlsx](https://github.com/Ren510/medical_clinic/files/6527799/_.xlsx)
 
 アプリケーション詳細設計図
 [アプリケーション詳細設計図:山田拓実.xlsx](https://github.com/Ren510/medical_clinic/files/6478298/default.xlsx)
