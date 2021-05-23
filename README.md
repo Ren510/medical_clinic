@@ -24,7 +24,7 @@ webで診察を容易に予約できるクリニックサイト
 
 ## 設計書
 ER図
-[ER図_山田拓実](https://user-images.githubusercontent.com/78352502/118262302-a5fdf700-b4ef-11eb-8bca-14ccf56707fa.png)
+<img width="651" alt="ER図:山田拓実" src="https://user-images.githubusercontent.com/78352502/119254175-d9c3d580-bbef-11eb-9fc9-ab837896798b.png">
 
 テーブル定義書
 [テーブル定義書_山田拓実.xlsx](https://github.com/Ren510/medical_clinic/files/6478310/_.xlsx)
